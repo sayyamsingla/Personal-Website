@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sayyam Singla | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aaizemberg/computer-modern-web-font@latest/fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -32,7 +38,10 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <img src="images/ProfilePic.png" alt="" class="profile-pic expandable-img">
+            <div class="profile-orbit">
+                <div class="profile-warp" aria-hidden="true"></div>
+                <img src="images/ProfilePic.png" alt="" class="profile-pic expandable-img">
+            </div>
             <h1>Hello, I'm <span class="highlight">Sayyam Singla</span></h1>
             <p class="tagline">Computer Engineering Student | Software Developer</p>
             <a href="#projects" class="cta-button">View My Work</a>
@@ -82,10 +91,17 @@
                     <span class="date">Sept 2025 – Present | Vancouver, BC</span>
                 </div>
                 <ul>
-                    <li>Member of a multidisciplinary student design team building autonomous drones and the backend software systems that support flight telemetry, ground control, and mission operations.</li>
-                    <li>Developed a high-precision object detection pipeline using the DINOv3 Vision Transformer (ViT) architecture to identify geometric targets via dense patch-level feature extraction and vector embeddings.</li>
-                    <li>Implemented patch-level Cosine Similarity math in PyTorch, utilizing matrix multiplication to compare live image feature vectors against a pre-calculated "Signature Mean Vector" for real-time target localization.</li>
-                    <li>Designed and debugged the underlying distributed architecture, using HTTP, UDP, and sockets to coordinate multiple services, manage port-based communication, and handle connection failures reliably.</li>
+                    <li>Member of a multidisciplinary student design team building autonomous drones and the backend
+                        software systems that support flight telemetry, ground control, and mission operations.</li>
+                    <li>Developed a high-precision object detection pipeline using the DINOv3 Vision Transformer (ViT)
+                        architecture to identify geometric targets via dense patch-level feature extraction and vector
+                        embeddings.</li>
+                    <li>Implemented patch-level Cosine Similarity math in PyTorch, utilizing matrix multiplication to
+                        compare live image feature vectors against a pre-calculated "Signature Mean Vector" for
+                        real-time target localization.</li>
+                    <li>Designed and debugged the underlying distributed architecture, using HTTP, UDP, and sockets to
+                        coordinate multiple services, manage port-based communication, and handle connection failures
+                        reliably.</li>
                 </ul>
             </div>
         </div>
@@ -100,9 +116,12 @@
                     <p class="project-tech">Linux, Docker, BASH </p>
                     <p class="project-date">Nov 2025 – Present</p>
                     <ul>
-                        <li>Deployed a network-wide DNS sinkhole using Pi-hole to block tracking telemetry, reducing unsolicited traffic by 30%.</li>
-                        <li>Engineered a 2TB NAS managing disk partitions with ext4 journaling and automated mount points via fstab.</li>
-                        <li>Utilized Docker to containerize services, ensuring process isolation and resource optimization.</li>
+                        <li>Deployed a network-wide DNS sinkhole using Pi-hole to block tracking telemetry, reducing
+                            unsolicited traffic by 30%.</li>
+                        <li>Engineered a 2TB NAS managing disk partitions with ext4 journaling and automated mount
+                            points via fstab.</li>
+                        <li>Utilized Docker to containerize services, ensuring process isolation and resource
+                            optimization.</li>
                     </ul>
                 </div>
                 <div class="project-card">
@@ -110,10 +129,13 @@
                     <p class="project-tech">C, OS161, GDB, Git</p>
                     <p class="project-date">Sept 2025 – Dec 2025</p>
                     <ul>
-                        <li>Developed Unix-based OS components: system calls, virtual memory, and process management.</li>
+                        <li>Developed Unix-based OS components: system calls, virtual memory, and process management.
+                        </li>
                         <li>Engineered a comprehensive File System API (open, read, write, close, dup2).</li>
-                        <li>Implemented thread synchronization primitives (Mutex Locks, Condition Variables) using wait channels.</li>
-                        <li>Designed process-level system calls (fork, execv, getpid) and expanded memory subsystem with sbrk.</li>
+                        <li>Implemented thread synchronization primitives (Mutex Locks, Condition Variables) using wait
+                            channels.</li>
+                        <li>Designed process-level system calls (fork, execv, getpid) and expanded memory subsystem with
+                            sbrk.</li>
                     </ul>
                 </div>
                 <div class="project-card">
@@ -121,7 +143,8 @@
                     <p class="project-tech">TypeScript, Go, Node.js, HTML/CSS, Git</p>
                     <p class="project-date">Sept 2024 – Dec 2024</p>
                     <ul>
-                        <li>Collaborated with a team of 5 to develop a web app for free food discovery integrating Instagram API.</li>
+                        <li>Collaborated with a team of 5 to develop a web app for free food discovery integrating
+                            Instagram API.</li>
                         <li>Implemented a robust backend in Go and Node.js for real-time data accuracy.</li>
                         <li>Engineered a responsive interface using TypeScript with Google Calendar integration.</li>
                         <li>Designed intuitive navigation and error handling to manage data retrieval failures.</li>
@@ -140,6 +163,15 @@
                 </div>
                 <div class="photo-card">
                     <img src="images/Blog2.png" alt="" class="expandable-img">
+                </div>
+                <div class="photo-card">
+                    <img src="images/Blog3.png" alt="" class="expandable-img">
+                </div>
+                <div class="photo-card">
+                    <img src="images/Blog4.png" alt="" class="expandable-img">
+                </div>
+                <div class="photo-card">
+                    <img src="images/Blog5.png" alt="" class="expandable-img">
                 </div>
             </div>
         </div>
@@ -162,7 +194,7 @@
     </footer>
 
     <button id="scrollToTop" title="Go to top">↑</button>
-    
+
 
     <!-- Image Modal -->
     <div id="imageModal" class="modal">
@@ -171,6 +203,14 @@
         <div id="modalCaption"></div>
     </div>
 
+    <svg class="mesh-filters" width="0" height="0" aria-hidden="true" focusable="false">
+        <filter id="meshWarp" x="-30%" y="-30%" width="160%" height="160%">
+            <feImage id="warpMap" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="warpMap" />
+            <feDisplacementMap id="warpDisplacement" in="SourceGraphic" in2="warpMap" scale="0" xChannelSelector="R"
+                yChannelSelector="G" />
+        </filter>
+    </svg>
     <script src="script.js"></script>
 </body>
+
 </html>
