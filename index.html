@@ -38,10 +38,7 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="profile-orbit">
-                <div class="profile-warp" aria-hidden="true"></div>
-                <img src="images/ProfilePic.png" alt="" class="profile-pic expandable-img">
-            </div>
+            <img src="images/ProfilePic.png" alt="" class="profile-pic expandable-img">
             <h1>Hello, I'm <span class="highlight">Sayyam Singla</span></h1>
             <p class="tagline">Computer Engineering Student | Software Developer</p>
             <a href="#projects" class="cta-button">View My Work</a>
@@ -126,6 +123,7 @@
                     </ul>
                 </div>
                 <div class="project-card">
+                    <img src="images/OS161.png" alt="OS161 Kernel Development" class="project-img expandable-img">
                     <h3>OS161 Kernel Development</h3>
                     <p class="project-tech">C, OS161, GDB, Git</p>
                     <p class="project-date">Sept 2025 – Dec 2025</p>
@@ -205,13 +203,7 @@
         <div id="modalCaption"></div>
     </div>
 
-    <svg class="mesh-filters" width="0" height="0" aria-hidden="true" focusable="false">
-        <filter id="meshWarp" x="-30%" y="-30%" width="160%" height="160%">
-            <feImage id="warpMap" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="warpMap" />
-            <feDisplacementMap id="warpDisplacement" in="SourceGraphic" in2="warpMap" scale="0" xChannelSelector="R"
-                yChannelSelector="G" />
-        </filter>
-    </svg>
+
     <script src="script.js"></script>
 </body>
 

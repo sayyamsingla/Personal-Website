@@ -168,45 +168,8 @@ nav {
     overflow: hidden;
 }
 
-.profile-orbit {
-    position: relative;
-    display: inline-block;
-    padding: 22px;
-    perspective: 1000px;
-}
 
-.profile-warp {
-    position: absolute;
-    inset: -300px;
-    pointer-events: none;
-    transform: rotateX(55deg) rotateZ(-12deg) translateZ(-150px) translateY(40px) scale(1.15);
-    border-radius: 30px;
-    mask-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 28%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.15) 70%, rgba(0, 0, 0, 0) 90%);
-    opacity: 1;
-    overflow: hidden;
-}
 
-.profile-warp canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-/* Dark mode mesh color is handled in JavaScript */
-
-.profile-warp::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 45%,
-            rgba(0, 0, 0, 0.35) 0%,
-            rgba(0, 0, 0, 0.18) 30%,
-            rgba(0, 0, 0, 0.08) 52%,
-            rgba(0, 0, 0, 0) 76%);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    filter: blur(10px);
-}
 
 .hero-content {
     max-width: 720px;
@@ -702,11 +665,8 @@ body.dark-mode .hamburger span {
     background: #f3f2ef;
 }
 
-body.dark-mode .hero-mesh {
-    background-image: linear-gradient(90deg, rgba(243, 242, 239, 0.12) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(243, 242, 239, 0.12) 1px, transparent 1px);
-    opacity: 0.25;
-}
+
+
 
 body.dark-mode .highlight {
     color: #a5b4fc;
