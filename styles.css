@@ -425,6 +425,21 @@ section h2 {
     font-family: var(--mono);
 }
 
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.6rem;
+    display: block;
+    box-shadow: 0 10px 24px var(--shadow);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+    transform: translateY(-4px);
+}
+
 .experience-card ul,
 .project-card ul {
     list-style: none;
