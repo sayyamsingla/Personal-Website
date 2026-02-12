@@ -76,19 +76,33 @@
     <section id="skills" class="about">
         <div class="container">
             <h2>Technical Skills</h2>
-            <div class="skills">
-                <div class="skill-card">
-                    <h3>Languages</h3>
-                    <p>Python, C/C++, Go, Java, TypeScript, JavaScript, HTML/CSS, Verilog, Arm Assembly</p>
+            <div class="skills-marquee">
+                <div class="skills-track">
+                    <!-- Row 1: Languages & Core Tech -->
+                    <span>Python</span><span>C/C++</span><span>Go</span><span>Java</span><span>TypeScript</span><span>JavaScript</span><span>HTML/CSS</span><span>Verilog</span><span>Arm
+                        Assembly</span><span>Rust</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span>Python</span><span>C/C++</span><span>Go</span><span>Java</span><span>TypeScript</span><span>JavaScript</span><span>HTML/CSS</span><span>Verilog</span><span>Arm
+                        Assembly</span><span>Rust</span>
                 </div>
-                <div class="skill-card">
-                    <h3>Developer Tools</h3>
-                    <p>Git, Linux, Docker, Tailscale, GDB, TensorFlow, PyTorch, Postman, VS Code, IntelliJ</p>
+                <div class="skills-track reverse">
+                    <!-- Row 2: Tools & Platforms -->
+                    <span>Git</span><span>Linux</span><span>Docker</span><span>Tailscale</span><span>GDB</span><span>TensorFlow</span><span>PyTorch</span><span>AWS</span><span>Raspberry
+                        Pi</span><span>FPGA</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span>Git</span><span>Linux</span><span>Docker</span><span>Tailscale</span><span>GDB</span><span>TensorFlow</span><span>PyTorch</span><span>AWS</span><span>Raspberry
+                        Pi</span><span>FPGA</span>
                 </div>
-                <div class="skill-card">
-                    <h3>Networking & Hardware</h3>
-                    <p>AWS, OSI Model, Raspberry Pi, FPGA development</p>
-                </div>
+            </div>
+
+            <!-- Mobile Fallback: Static Skills List -->
+            <div class="skills-static">
+                <!-- Languages -->
+                <span>Python</span><span>C/C++</span><span>Go</span><span>Java</span><span>TypeScript</span><span>JavaScript</span><span>HTML/CSS</span><span>Verilog</span><span>Arm
+                    Assembly</span><span>Rust</span>
+                <!-- Tools -->
+                <span>Git</span><span>Linux</span><span>Docker</span><span>Tailscale</span><span>GDB</span><span>TensorFlow</span><span>PyTorch</span><span>AWS</span><span>Raspberry
+                    Pi</span><span>FPGA</span>
             </div>
         </div>
     </section>
