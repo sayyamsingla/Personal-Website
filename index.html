@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sayyam Singla | Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aaizemberg/computer-modern-web-font@latest/fonts.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -26,6 +23,7 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -37,11 +35,29 @@
     </header>
 
     <section id="home" class="hero">
+        <div class="hero-banner">
+            <img src="images/backgroundPhoto.png" alt="" class="hero-bg">
+        </div>
         <div class="hero-content">
             <img src="images/ProfilePic.png" alt="" class="profile-pic expandable-img">
             <h1>Hello, I'm <span class="highlight">Sayyam Singla</span></h1>
             <p class="tagline">Computer Engineering Student | Software Developer</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-me">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-card">
+                <p>I'm currently in my third year of Computer Engineering at UBC. I've gained hands-on experience in
+                    software engineering with languages like Java and Python, but my favorite language is C because I
+                    love exploring the intersection between hardware and software.</p>
+                <p>On a personal note, I'm passionate about staying active—whether that's going to the gym, running, or
+                    hiking. I love the outdoors and try to spend as much time in nature as I can.</p>
+                <p>Another big interest of mine is astronomy and aviation. I'm taking an astronomy course, and you can
+                    often find me plane spotting near YVR. I find space fascinating and might even pursue a minor in it.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -87,19 +103,15 @@
                     <span class="company">UBC UAS</span>
                     <span class="date">Sept 2025 – Present | Vancouver, BC</span>
                 </div>
-                <ul>
-                    <li>Member of a multidisciplinary student design team building autonomous drones and the backend
-                        software systems that support flight telemetry, ground control, and mission operations.</li>
-                    <li>Developed a high-precision object detection pipeline using the DINOv3 Vision Transformer (ViT)
-                        architecture to identify geometric targets via dense patch-level feature extraction and vector
-                        embeddings.</li>
-                    <li>Implemented patch-level Cosine Similarity math in PyTorch, utilizing matrix multiplication to
-                        compare live image feature vectors against a pre-calculated "Signature Mean Vector" for
-                        real-time target localization.</li>
-                    <li>Designed and debugged the underlying distributed architecture, using HTTP, UDP, and sockets to
-                        coordinate multiple services, manage port-based communication, and handle connection failures
-                        reliably.</li>
-                </ul>
+                <div class="story-text">
+                    <p>I joined UBC's autonomous drone team because of my lifelong love for aviation and the magic of
+                        seeing things fly. It was the perfect way to work on systems where software has real physical
+                        consequences.</p>
+                    <p>My first challenge was figuring out how to make a drone "see." I built an object detection
+                        pipeline using the DINOv3 Vision Transformer — essentially teaching the drone to spot geometric
+                        targets by comparing what it sees against a signature it's memorized, all in real-time using
+                        PyTorch.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -111,44 +123,45 @@
                 <div class="project-card">
                     <img src="images/Server.png" alt="Raspberry Pi Home Server" class="project-img expandable-img">
                     <h3>Raspberry Pi Home Server</h3>
-                    <p class="project-tech">Linux, Docker, BASH </p>
+                    <p class="project-tech">Linux, Docker, BASH</p>
                     <p class="project-date">Nov 2025 – Present</p>
-                    <ul>
-                        <li>Deployed a network-wide DNS sinkhole using Pi-hole to block tracking telemetry, reducing
-                            unsolicited traffic by 30%.</li>
-                        <li>Engineered a 2TB NAS managing disk partitions with ext4 journaling and automated mount
-                            points via fstab.</li>
-                        <li>Utilized Docker to containerize services, ensuring process isolation and resource
-                            optimization.</li>
-                    </ul>
+                    <div class="story-text">
+                        <p>I got tired of ads on every device in my apartment and wanted full ownership of my data, so I
+                            decided to build my own infrastructure from a $50 Raspberry Pi.</p>
+                        <p>I set up a Pi-hole that now blocks about 30% of all network traffic. Then I added a 2TB NAS
+                            for personal
+                            file storage, learning the ins and outs of disk partitioning, ext4 journaling, and fstab
+                            along the way. Everything runs in Docker containers so nothing can break anything else.</p>
+                    </div>
                 </div>
                 <div class="project-card">
                     <img src="images/OS161.png" alt="OS161 Kernel Development" class="project-img expandable-img">
                     <h3>OS161 Kernel Development</h3>
                     <p class="project-tech">C, OS161, GDB, Git</p>
                     <p class="project-date">Sept 2025 – Dec 2025</p>
-                    <ul>
-                        <li>Developed Unix-based OS components: system calls, virtual memory, and process management.
-                        </li>
-                        <li>Engineered a comprehensive File System API (open, read, write, close, dup2).</li>
-                        <li>Implemented thread synchronization primitives (Mutex Locks, Condition Variables) using wait
-                            channels.</li>
-                        <li>Designed process-level system calls (fork, execv, getpid) and expanded memory subsystem with
-                            sbrk.</li>
-                    </ul>
+                    <div class="story-text">
+                        <p>Ever wondered what actually happens when you call <code>fork()</code>? I got to find out by
+                            building it from scratch. This was a project for my CPEN 331 Operating Systems class, where
+                            we extended an instructional operating system with real Unix functionality.</p>
+                        <p>I implemented everything from file operations (open, read, write, dup2) to process management
+                            (fork, execv, getpid) and thread synchronization using mutex locks and condition variables.
+                        </p>
+                    </div>
                 </div>
                 <div class="project-card">
                     <img src="images/FeedUBC.png" alt="FeedUBC Web Application" class="project-img expandable-img">
                     <h3>FeedUBC Web Application</h3>
                     <p class="project-tech">TypeScript, Go, Node.js, HTML/CSS, Git</p>
                     <p class="project-date">Sept 2024 – Dec 2024</p>
-                    <ul>
-                        <li>Collaborated with a team of 5 to develop a web app for free food discovery integrating
-                            Instagram API.</li>
-                        <li>Implemented a robust backend in Go and Node.js for real-time data accuracy.</li>
-                        <li>Engineered a responsive interface using TypeScript with Google Calendar integration.</li>
-                        <li>Designed intuitive navigation and error handling to manage data retrieval failures.</li>
-                    </ul>
+                    <div class="story-text">
+                        <p>University life can be expensive, so finding free food on campus is always a big help. Our
+                            team of 5 built a web app that scrapes Instagram posts from UBC clubs and event pages to
+                            find free food events in real-time.</p>
+                        <p>We built the backend in Go and Node.js to handle the Instagram API integration, and wired up
+                            a
+                            TypeScript frontend with Google Calendar so you could add food events directly to your
+                            schedule.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,6 +185,9 @@
                 </div>
                 <div class="photo-card">
                     <img src="images/Blog5.png" alt="" class="expandable-img">
+                </div>
+                <div class="photo-card">
+                    <img src="images/Blog6.png" alt="" class="expandable-img">
                 </div>
             </div>
         </div>

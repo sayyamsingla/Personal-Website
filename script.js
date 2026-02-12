@@ -58,56 +58,48 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+// Apple-style scroll animations
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Add a small delay for staggered effect
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 100);
-            observer.unobserve(entry.target);
+            entry.target.classList.add('revealed');
+
+            // Stagger children animations
+            const children = entry.target.querySelectorAll('.stagger-child');
+            children.forEach((child, i) => {
+                child.style.transitionDelay = `${i * 120}ms`;
+                child.classList.add('revealed');
+            });
+
+            revealObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
-
-// Observe all cards and sections
-document.querySelectorAll('.skill-card, .project-card, .education-card, .experience-card, section h2, .experience-header').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(el);
+}, {
+    threshold: 0.05,
+    rootMargin: '0px 0px -60px 0px'
 });
 
-// 3D Tilt Effect for Cards
-const tiltCards = document.querySelectorAll('.project-card, .skill-card');
+// Mark elements for reveal animation
+document.querySelectorAll('section').forEach(section => {
+    if (section.id === 'home') return; // Hero has its own animation
 
-tiltCards.forEach(card => {
-    card.style.transformStyle = 'preserve-3d';
+    section.classList.add('reveal');
+    revealObserver.observe(section);
 
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = (y - centerY) / 15;
-        const rotateY = (centerX - x) / 15;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    // Mark cards and items as stagger children
+    section.querySelectorAll('.skill-card, .project-card, .education-card, .experience-card, .photo-card').forEach(child => {
+        child.classList.add('stagger-child');
     });
 });
+
+// Hero entrance animation
+window.addEventListener('load', () => {
+    const heroContent = document.querySelector('.hero-content');
+    const heroBanner = document.querySelector('.hero-banner');
+    if (heroContent) heroContent.classList.add('hero-entered');
+    if (heroBanner) heroBanner.classList.add('hero-entered');
+});
+
 
 // Typing effect for tagline
 const tagline = document.querySelector('.tagline');
