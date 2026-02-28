@@ -489,9 +489,16 @@ section h2 {
     user-select: none;
 }
 
-.skills-track .skill-tile i {
-    font-size: 2rem;
-    line-height: 1;
+.skills-track .skill-tile i,
+.skills-static .skill-tile i {
+    font-size: 2rem !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    margin: 0 !important;
 }
 
 .skills-track .skill-tile img {
@@ -539,9 +546,7 @@ section h2 {
     margin: 0.3rem;
 }
 
-.skills-static .skill-tile i {
-    font-size: 1.7rem;
-}
+
 
 .skills-static .skill-tile span {
     font-size: 0.65rem;
