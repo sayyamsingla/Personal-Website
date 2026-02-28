@@ -154,7 +154,7 @@ function init() {
         revealObserver.observe(section);
 
         // Mark cards and items as stagger children
-        section.querySelectorAll('.skill-card, .project-card, .education-card, .experience-card, .photo-card, .skill-tile').forEach(child => {
+        section.querySelectorAll('.skill-card, .project-card, .education-card, .experience-card, .photo-card').forEach(child => {
             child.classList.add('stagger-child');
         });
     });
