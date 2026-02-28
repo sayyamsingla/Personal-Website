@@ -1130,28 +1130,6 @@ html.is-animating .transition-fade {
     transform: translateY(10px);
 }
 
-/* --- Starry Night Canvas --- */
-#starCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 2s ease;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-}
-
-#starCanvas.active {
-    opacity: 1;
-}
-
-body.stars-active {
-    background: transparent !important;
-}
-
 #starToggle {
     transition: transform 0.3s ease;
     display: inline-block;
@@ -1177,19 +1155,4 @@ body.stars-active {
     transform: translateY(-6px) scale(1.3) !important;
     animation: none;
     filter: drop-shadow(0 0 12px rgba(30, 58, 138, 1));
-}
-
-/* Hide hero banner image when stars are active */
-body.stars-active .hero-bg,
-body.stars-active .hero-banner::after {
-    opacity: 0;
-    transition: opacity 1.5s ease;
-}
-
-body .hero-bg {
-    transition: opacity 1.5s ease;
-}
-
-body .hero-banner::after {
-    transition: opacity 1.5s ease;
 }
