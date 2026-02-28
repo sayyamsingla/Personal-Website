@@ -1083,13 +1083,7 @@ body.dark-mode footer {
 
     /* Mobile Hero Adjustment */
     .hero-banner {
-        height: 60vh;
-        /* Increased height for better visibility */
-    }
-
-    .hero-bg {
-        object-position: 100% center;
-        /* Shift focus to the far right (plane cockpit) */
+        display: none;
     }
 
     /* Mobile Skills Fallback */
