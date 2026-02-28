@@ -202,3 +202,96 @@ init();
 swup.hooks.on('page:view', () => {
     init();
 });
+
+// --- Starry Night Logic --- //
+const starCanvas = document.getElementById('starCanvas');
+const starToggle = document.getElementById('starToggle');
+let starsActive = false;
+let animationFrameId;
+
+if (starCanvas && starToggle) {
+    const ctx = starCanvas.getContext('2d');
+    let stars = [];
+    const numStars = 200;
+
+    function resizeCanvas() {
+        starCanvas.width = window.innerWidth;
+        starCanvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Star {
+        constructor() {
+            this.x = Math.random() * starCanvas.width;
+            this.y = Math.random() * starCanvas.height;
+            this.radius = Math.random() * 1.5;
+            this.speedX = (Math.random() - 0.5) * 0.5;
+            this.speedY = (Math.random() - 0.5) * 0.5;
+            this.opacity = Math.random();
+            this.opacitySpeed = (Math.random() * 0.02) + 0.005;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+            ctx.fill();
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            // Twinkle effect
+            this.opacity += this.opacitySpeed;
+            if (this.opacity >= 1 || this.opacity <= 0) {
+                this.opacitySpeed = -this.opacitySpeed;
+            }
+
+            // Wrap around edges
+            if (this.x < 0) this.x = starCanvas.width;
+            if (this.x > starCanvas.width) this.x = 0;
+            if (this.y < 0) this.y = starCanvas.height;
+            if (this.y > starCanvas.height) this.y = 0;
+
+            this.draw();
+        }
+    }
+
+    function initStars() {
+        stars = [];
+        for (let i = 0; i < numStars; i++) {
+            stars.push(new Star());
+        }
+    }
+
+    function animateStars() {
+        ctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].update();
+        }
+        animationFrameId = requestAnimationFrame(animateStars);
+    }
+
+    starToggle.addEventListener('click', () => {
+        starsActive = !starsActive;
+        
+        if (starsActive) {
+            // Force dark mode if not already in it
+            if (!document.body.classList.contains('dark-mode')) {
+                document.getElementById('darkModeToggle').click();
+            }
+            
+            document.body.classList.add('stars-active');
+            starCanvas.classList.add('active');
+            initStars();
+            animateStars();
+        } else {
+            document.body.classList.remove('stars-active');
+            starCanvas.classList.remove('active');
+            cancelAnimationFrame(animationFrameId);
+        }
+    });
+}
