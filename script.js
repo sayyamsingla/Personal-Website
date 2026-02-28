@@ -37,25 +37,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active state to navigation on scroll
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
+// Add active state to navigation based on URL
+const currentPath = window.location.pathname;
+const currentPage = currentPath.split('/').pop() || 'index.html';
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.classList.remove('active');
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage) {
+        link.classList.add('active');
+    }
 });
 
 // Apple-style scroll animations
@@ -103,16 +94,20 @@ window.addEventListener('load', () => {
 
 // Typing effect for tagline
 const tagline = document.querySelector('.tagline');
-const text = tagline.textContent;
-tagline.textContent = '';
+let text = '';
 let i = 0;
 
 function typeWriter() {
-    if (i < text.length) {
+    if (tagline && i < text.length) {
         tagline.textContent += text.charAt(i);
         i++;
         setTimeout(typeWriter, 50);
     }
+}
+
+if (tagline) {
+    text = tagline.textContent;
+    tagline.textContent = '';
 }
 
 

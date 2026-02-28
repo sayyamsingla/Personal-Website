@@ -23,14 +23,11 @@
                 </button>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <!-- <li><a href="#education">Education</a></li> -->
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#photography">Photography</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -62,21 +59,9 @@
         </div>
     </section>
 
-    <!-- <section id="education" class="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-card">
-                <img src="images/ubc-logo.png" alt="" class="ubc-logo">
-                <h3>University of British Columbia</h3>
-                <p class="degree">Bachelor of Applied Science in Computer Engineering</p>
-                <p class="date">Sept. 2024 – Present | Vancouver, BC</p>
-            </div>
-        </div>
-    </section> -->
-
     <section id="skills" class="about">
         <div class="container">
-            <h2>Technical Skills</h2>
+            <h2>My Skills</h2>
             <div class="skills-marquee">
                 <div class="skills-track">
                     <!-- Row 1: Languages — originals -->
@@ -167,144 +152,6 @@
         </div>
     </section>
 
-
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-card">
-                <img src="images/UAS.png" alt="" class="experience-img expandable-img">
-                <div class="experience-header">
-                    <h3>Software Developer</h3>
-                    <span class="company">UBC UAS</span>
-                    <span class="date">Sept 2025 – Present | Vancouver, BC</span>
-                </div>
-                <div class="story-text">
-                    <p>I joined UBC's autonomous drone team because of my lifelong love for aviation and the magic of
-                        seeing things fly. It was the perfect way to work on systems where software has real physical
-                        consequences.</p>
-                    <p>My first challenge was figuring out how to make a drone "see." I built an object detection
-                        pipeline using the DINOv3 Vision Transformer — essentially teaching the drone to spot geometric
-                        targets by comparing what it sees against a signature it's memorized, all in real-time using
-                        PyTorch.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Technical Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="images/exoplanet-classifier.gif" alt="Exoplanet Transit Classifier"
-                        class="project-img expandable-img">
-                    <h3>Exoplanet Transit Classifier</h3>
-                    <p class="project-tech">PyTorch, Python, TensorFlow, scikit-learn</p>
-                    <p class="project-date">Feb 2026</p>
-                    <div class="story-text">
-                        <p>I've always been fascinated by the night sky, the idea that somewhere out there, thousands
-                            of
-                            other worlds are orbiting other suns. When I learned that NASA's Kepler telescope detected
-                            planets by watching stars flicker, I knew I had to try and build something that could do the
-                            same.</p>
-                        <p>Each time a planet passes in front of its star, it dims the light ever so slightly, just a
-                            tiny
-                            blip in a sea of noise. I built a dual-branch 1D CNN in PyTorch that simultaneously studies
-                            the full orbital period and zooms in on the transit itself, fusing both perspectives to
-                            decide: real planet, or false alarm? The model catches 93.9% of all confirmed planet
-                            candidates, missing only 18 out of 360 in the test set.</p>
-                        <p>Because missing a real planet matters far more than a false alarm, I applied cost-sensitive
-                            learning to the loss function, a decision that alone boosted recall by 12 percentage
-                            points. Final metrics: <strong>97.7% AUROC</strong>, <strong>93.9% recall</strong> on real
-                            NASA Kepler data.</p>
-                    </div>
-                    <a href="https://github.com/sayyamsingla/exoplanet-transit-classifier" target="_blank"
-                        class="project-link">View on GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <img src="images/Server.png" alt="Raspberry Pi Home Server" class="project-img expandable-img">
-                    <h3>Raspberry Pi Home Server</h3>
-                    <p class="project-tech">Linux, Docker, BASH</p>
-                    <p class="project-date">Nov 2025 – Present</p>
-                    <div class="story-text">
-                        <p>I got tired of ads on every device in my apartment and wanted full ownership of my data, so I
-                            decided to build my own infrastructure from a $50 Raspberry Pi.</p>
-                        <p>I set up a Pi-hole that now blocks about 30% of all network traffic. Then I added a 2TB NAS
-                            for personal
-                            file storage, learning the ins and outs of disk partitioning, ext4 journaling, and fstab
-                            along the way. Everything runs in Docker containers so nothing can break anything else.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="images/OS161.png" alt="OS161 Kernel Development" class="project-img expandable-img">
-                    <h3>OS161 Kernel Development</h3>
-                    <p class="project-tech">C, OS161, GDB, Git</p>
-                    <p class="project-date">Sept 2025 – Dec 2025</p>
-                    <div class="story-text">
-                        <p>Ever wondered what actually happens when you call <code>fork()</code>? I got to find out by
-                            building it from scratch. This was a project for my CPEN 331 Operating Systems class, where
-                            we extended an instructional operating system with real Unix functionality.</p>
-                        <p>I implemented everything from file operations (open, read, write, dup2) to process management
-                            (fork, execv, getpid) and thread synchronization using mutex locks and condition variables.
-                        </p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="images/FeedUBC.png" alt="FeedUBC Web Application" class="project-img expandable-img">
-                    <h3>FeedUBC Web Application</h3>
-                    <p class="project-tech">TypeScript, Go, Node.js, HTML/CSS, Git</p>
-                    <p class="project-date">Sept 2024 – Dec 2024</p>
-                    <div class="story-text">
-                        <p>University life can be expensive, so finding free food on campus is always a big help. Our
-                            team of 5 built a web app that scrapes Instagram posts from UBC clubs and event pages to
-                            find free food events in real-time.</p>
-                        <p>We built the backend in Go and Node.js to handle the Instagram API integration, and wired up
-                            a
-                            TypeScript frontend with Google Calendar so you could add food events directly to your
-                            schedule.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="photography" class="photography">
-        <div class="container">
-            <h2>Photography</h2>
-            <div class="photography-grid">
-                <div class="photo-card">
-                    <img src="images/Blog1.png" alt="" class="expandable-img">
-                </div>
-                <div class="photo-card">
-                    <img src="images/Blog2.png" alt="" class="expandable-img">
-                </div>
-                <div class="photo-card">
-                    <img src="images/Blog3.png" alt="" class="expandable-img">
-                </div>
-                <div class="photo-card">
-                    <img src="images/Blog4.png" alt="" class="expandable-img">
-                </div>
-                <div class="photo-card">
-                    <img src="images/Blog5.png" alt="" class="expandable-img">
-                </div>
-                <div class="photo-card">
-                    <img src="images/Blog6.png" alt="" class="expandable-img">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Feel free to reach out if you'd like to collaborate or just chat!</p>
-            <div class="contact-links">
-                <a href="mailto:singlasayyam@gmail.com">Email</a>
-                <a href="https://github.com/sayyamsingla/" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/sayyam-singla/" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <p>&copy; 2026 Sayyam Singla. All rights reserved.</p>

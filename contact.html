@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayyam Singla | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Sayyam Singla</div>
+            <div class="nav-controls">
+                <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out if you'd like to collaborate or just chat!</p>
+            <div class="contact-links">
+                <a href="mailto:singlasayyam@gmail.com">Email</a>
+                <a href="https://github.com/sayyamsingla/" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/sayyam-singla/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sayyam Singla. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTop" title="Go to top">↑</button>
+
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

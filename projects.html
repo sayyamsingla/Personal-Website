@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayyam Singla | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Sayyam Singla</div>
+            <div class="nav-controls">
+                <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Technical Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/exoplanet-classifier.gif" alt="Exoplanet Transit Classifier"
+                        class="project-img expandable-img">
+                    <h3>Exoplanet Transit Classifier</h3>
+                    <p class="project-tech">PyTorch, Python, TensorFlow, scikit-learn</p>
+                    <p class="project-date">Feb 2026</p>
+                    <div class="story-text">
+                        <p>I've always been fascinated by the night sky, the idea that somewhere out there, thousands
+                            of
+                            other worlds are orbiting other suns. When I learned that NASA's Kepler telescope detected
+                            planets by watching stars flicker, I knew I had to try and build something that could do the
+                            same.</p>
+                        <p>Each time a planet passes in front of its star, it dims the light ever so slightly, just a
+                            tiny
+                            blip in a sea of noise. I built a dual-branch 1D CNN in PyTorch that simultaneously studies
+                            the full orbital period and zooms in on the transit itself, fusing both perspectives to
+                            decide: real planet, or false alarm? The model catches 93.9% of all confirmed planet
+                            candidates, missing only 18 out of 360 in the test set.</p>
+                        <p>Because missing a real planet matters far more than a false alarm, I applied cost-sensitive
+                            learning to the loss function, a decision that alone boosted recall by 12 percentage
+                            points. Final metrics: <strong>97.7% AUROC</strong>, <strong>93.9% recall</strong> on real
+                            NASA Kepler data.</p>
+                    </div>
+                    <a href="https://github.com/sayyamsingla/exoplanet-transit-classifier" target="_blank"
+                        class="project-link">View on GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <img src="images/Server.png" alt="Raspberry Pi Home Server" class="project-img expandable-img">
+                    <h3>Raspberry Pi Home Server</h3>
+                    <p class="project-tech">Linux, Docker, BASH</p>
+                    <p class="project-date">Nov 2025 – Present</p>
+                    <div class="story-text">
+                        <p>I got tired of ads on every device in my apartment and wanted full ownership of my data, so I
+                            decided to build my own infrastructure from a $50 Raspberry Pi.</p>
+                        <p>I set up a Pi-hole that now blocks about 30% of all network traffic. Then I added a 2TB NAS
+                            for personal
+                            file storage, learning the ins and outs of disk partitioning, ext4 journaling, and fstab
+                            along the way. Everything runs in Docker containers so nothing can break anything else.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/OS161.png" alt="OS161 Kernel Development" class="project-img expandable-img">
+                    <h3>OS161 Kernel Development</h3>
+                    <p class="project-tech">C, OS161, GDB, Git</p>
+                    <p class="project-date">Sept 2025 – Dec 2025</p>
+                    <div class="story-text">
+                        <p>Ever wondered what actually happens when you call <code>fork()</code>? I got to find out by
+                            building it from scratch. This was a project for my CPEN 331 Operating Systems class, where
+                            we extended an instructional operating system with real Unix functionality.</p>
+                        <p>I implemented everything from file operations (open, read, write, dup2) to process management
+                            (fork, execv, getpid) and thread synchronization using mutex locks and condition variables.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/FeedUBC.png" alt="FeedUBC Web Application" class="project-img expandable-img">
+                    <h3>FeedUBC Web Application</h3>
+                    <p class="project-tech">TypeScript, Go, Node.js, HTML/CSS, Git</p>
+                    <p class="project-date">Sept 2024 – Dec 2024</p>
+                    <div class="story-text">
+                        <p>University life can be expensive, so finding free food on campus is always a big help. Our
+                            team of 5 built a web app that scrapes Instagram posts from UBC clubs and event pages to
+                            find free food events in real-time.</p>
+                        <p>We built the backend in Go and Node.js to handle the Instagram API integration, and wired up
+                            a
+                            TypeScript frontend with Google Calendar so you could add food events directly to your
+                            schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sayyam Singla. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTop" title="Go to top">↑</button>
+
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
