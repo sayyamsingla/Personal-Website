@@ -1082,8 +1082,18 @@ body.dark-mode footer {
     }
 
     /* Mobile Hero Adjustment */
+    .hero {
+        justify-content: center;
+        padding-top: 70px;
+        /* Reduced from 110px since there banner is gone */
+    }
+
     .hero-banner {
         display: none;
+    }
+
+    .hero-content {
+        margin-top: 0;
     }
 
     /* Mobile Skills Fallback */
