@@ -472,40 +472,114 @@ section h2 {
     animation-play-state: paused;
 }
 
-.skills-track span {
-    padding: 0.6rem 1.2rem;
+.skills-track .skill-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    width: 90px;
+    height: 90px;
     background: var(--card);
     border: 1px solid var(--rule);
-    border-radius: var(--radius-pill);
-    font-family: var(--mono);
-    font-size: 0.95rem;
-    white-space: nowrap;
-    color: var(--ink);
-    transition: transform 0.2s, color 0.2s, border-color 0.2s;
+    border-radius: 16px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
     user-select: none;
 }
 
-.skills-track span:hover {
-    transform: scale(1.05);
-    border-color: var(--accent);
-    color: var(--accent);
+.skills-track .skill-tile i {
+    font-size: 2rem;
+    line-height: 1;
 }
+
+.skills-track .skill-tile img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.skills-track .skill-tile span {
+    font-size: 0.72rem;
+    font-family: var(--mono);
+    color: var(--muted);
+    text-align: center;
+    white-space: nowrap;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.skills-track .skill-tile:hover {
+    transform: translateY(-4px) scale(1.06);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+/* Emoji fallback tiles */
+.skill-tile--text .skill-tile-emoji {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+/* Mobile static fallback */
+.skills-static .skill-tile {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 80px;
+    height: 80px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    margin: 0.3rem;
+}
+
+.skills-static .skill-tile i {
+    font-size: 1.7rem;
+}
+
+.skills-static .skill-tile span {
+    font-size: 0.65rem;
+    font-family: var(--mono);
+    color: var(--muted);
+    text-align: center;
+    white-space: nowrap;
+}
+
+body.dark-mode .skills-track .skill-tile,
+body.dark-mode .skills-static .skill-tile {
+    background: #1b1a18;
+    border-color: #2d2c2a;
+}
+
+body.dark-mode .skills-track .skill-tile:hover {
+    border-color: #a5b4fc;
+}
+
+body.dark-mode .skills-track .skill-tile span,
+body.dark-mode .skills-static .skill-tile span {
+    color: #999;
+}
+
+body.dark-mode .skill-tile i.devicon-rust-original,
+body.dark-mode .skill-tile i.devicon-linux-plain {
+    filter: invert(1) brightness(1.2);
+}
+
+body.dark-mode .skill-tile i.devicon-git-plain {
+    filter: brightness(1.3);
+}
+
 
 @keyframes scroll {
     to {
         transform: translateX(-50%);
     }
-}
-
-body.dark-mode .skills-track span {
-    background: #1b1a18;
-    border-color: #2d2c2a;
-    color: #ccc;
-}
-
-body.dark-mode .skills-track span:hover {
-    border-color: #a5b4fc;
-    color: #a5b4fc;
 }
 
 .projects .project-grid {
@@ -532,6 +606,31 @@ body.dark-mode .skills-track span:hover {
     font-size: 0.85rem;
     color: var(--muted);
     font-family: var(--mono);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+    font-family: var(--mono);
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--accent-2);
+    transform: translateX(3px);
+}
+
+body.dark-mode .project-link {
+    color: #a5b4fc;
+}
+
+body.dark-mode .project-link:hover {
+    color: #c4b5fd;
 }
 
 .project-img {
@@ -990,22 +1089,7 @@ body.dark-mode footer {
         margin-bottom: 1rem;
     }
 
-    .skills-static span {
-        padding: 0.5rem 1rem;
-        background: var(--card);
-        border: 1px solid var(--rule);
-        border-radius: var(--radius-pill);
-        font-family: var(--mono);
-        font-size: 0.9rem;
-        /* Slightly larger text */
-        color: var(--ink);
-    }
 
-    body.dark-mode .skills-static span {
-        background: #1b1a18;
-        border-color: #2d2c2a;
-        color: #ccc;
-    }
 
     .photography .photography-grid {
         grid-template-columns: 1fr;
