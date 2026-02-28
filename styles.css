@@ -1088,8 +1088,8 @@ body.dark-mode footer {
     }
 
     .hero-bg {
-        object-position: 30% center;
-        /* Shift focus to the left (plane cockpit) */
+        object-position: 100% center;
+        /* Shift focus to the far right (plane cockpit) */
     }
 
     /* Mobile Skills Fallback */
